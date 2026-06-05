@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MySpace</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#projects" class="nav-link">项目</a></li>
+                <li><a href="#essays" class="nav-link">随笔</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 首页 / Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="avatar-container">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23b0d4f1'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23ffffff'/%3E%3Cellipse cx='50' cy='80' rx='30' ry='12' fill='%23ffffff'/%3E%3C/svg%3E"
+                     alt="头像" class="avatar">
+            </div>
+            <h1 class="hero-name">你好，我是 <span class="highlight">XXX</span></h1>
+            <p class="hero-tagline">开发者 / 创作者 / 终身学习者</p>
+            <p class="hero-bio">热爱技术，喜欢构建优雅的解决方案</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="#contact" class="btn btn-outline">联系我</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>我是一名充满热情的开发者，专注于创造出有意义的产品和体验。</p>
+                    <p>我享受将复杂问题转化为简洁解决方案的过程，持续学习新知识并应用于实践中。</p>
+                    <p>工作之余，我喜欢阅读、写作，偶尔记录一些技术随笔和生活感悟。</p>
+                </div>
+                <div class="about-skills">
+                    <h3>技能标签</h3>
+                    <div class="skill-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目 -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">项目</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">📁</div>
+                    <h3>项目名称一</h3>
+                    <p>这是一个简短的项目描述，介绍项目的功能、使用的技术栈以及解决的问题。</p>
+                    <div class="project-tags">
+                        <span>React</span><span>Node.js</span>
+                    </div>
+                    <a href="#" class="project-link">了解更多 →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🚀</div>
+                    <h3>项目名称二</h3>
+                    <p>这是另一个项目的简介，突出项目的亮点和创新之处。</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>Flask</span>
+                    </div>
+                    <a href="#" class="project-link">了解更多 →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">💡</div>
+                    <h3>项目名称三</h3>
+                    <p>描述这个项目解决了什么实际问题，带来了什么价值。</p>
+                    <div class="project-tags">
+                        <span>Vue</span><span>Express</span>
+                    </div>
+                    <a href="#" class="project-link">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 随笔 -->
+    <section id="essays" class="essays section">
+        <div class="container">
+            <h2 class="section-title">随笔</h2>
+            <div class="essay-list">
+                <article class="essay-item">
+                    <time datetime="2026-05-20">2026-05-20</time>
+                    <div class="essay-content">
+                        <h3>如何使用 Git 高效协作</h3>
+                        <p>团队协作中 Git 的最佳实践与工作流程总结...</p>
+                    </div>
+                </article>
+                <article class="essay-item">
+                    <time datetime="2026-04-15">2026-04-15</time>
+                    <div class="essay-content">
+                        <h3>初探 Rust：内存安全的新思路</h3>
+                        <p>从所有权机制看 Rust 如何在不使用 GC 的情况下保证内存安全...</p>
+                    </div>
+                </article>
+                <article class="essay-item">
+                    <time datetime="2026-03-08">2026-03-08</time>
+                    <div class="essay-content">
+                        <h3>远程工作的思考</h3>
+                        <p>一年多远程办公下来，关于效率与生活平衡的一些个人体会...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <p class="contact-subtitle">欢迎通过以下方式与我取得联系</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 15.5v-5h-2v-2h2v-1.5c0-2 1.2-3.1 3-3.1.8 0 1.7.1 2.4.3l-.4 2c-.5-.1-1-.2-1.5-.2-.8 0-1.1.4-1.1 1.1v1.4h2.6l-.3 2h-2.3v5h-2.4z"/></svg>
+                    </div>
+                    <span class="contact-label">QQ</span>
+                    <span class="contact-value">1234567890</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8.69 3.46l-1.73.72c-.68.28-1.14.89-1.14 1.62v12.4c0 .73.46 1.34 1.14 1.62l1.73.72c.38.16.82.16 1.2 0l6.62-2.76c.68-.28 1.14-.89 1.14-1.62V3.78c0-.73-.46-1.34-1.14-1.62L9.89 3.46c-.38-.16-.82-.16-1.2 0zm1.31.95l5.5 2.29v10.6l-5.5 2.29V4.41zM8 7.62l-2 1V19.2l2-1V7.62zm8 0v10.58l2-1V8.62l-2-1z"/></svg>
+                    </div>
+                    <span class="contact-label">微信</span>
+                    <span class="contact-value">wechat_id_here</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <span class="contact-label">电子邮箱</span>
+                    <a href="mailto:yourname@example.com" class="contact-value">yourname@example.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="contact-value">github.com/yourusername</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MySpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
