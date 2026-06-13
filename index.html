@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
+    <title>卫政辉 · 个人主页</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">MySpace</a>
+            <a href="#home" class="nav-logo">卑以自牧</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">首页</a></li>
                 <li><a href="#about" class="nav-link">关于</a></li>
                 <li><a href="#projects" class="nav-link">项目</a></li>
-                <li><a href="#essays" class="nav-link">随笔</a></li>
                 <li><a href="#contact" class="nav-link">联系</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="菜单">
@@ -28,17 +27,35 @@
 
     <!-- 首页 / Hero -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="avatar-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23b0d4f1'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23ffffff'/%3E%3Cellipse cx='50' cy='80' rx='30' ry='12' fill='%23ffffff'/%3E%3C/svg%3E"
-                     alt="头像" class="avatar">
+        <div class="hero-container">
+            <!-- 左边：主体内容 -->
+            <div class="hero-left">
+                <div class="avatar-container">
+                    <img src="touxiang.jpg" alt="头像" class="avatar">
+                </div>
+                <h1 class="hero-name">卫政辉</h1>
+                <p class="hero-tagline">前端开发 / 设计师 / 终身学习者</p>
+                <p class="hero-bio">热爱技术，喜欢构建优雅的解决方案</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">查看项目</a>
+                    <a href="#contact" class="btn btn-outline">联系我</a>
+                </div>
             </div>
-            <h1 class="hero-name">你好，我是 <span class="highlight">XXX</span></h1>
-            <p class="hero-tagline">开发者 / 创作者 / 终身学习者</p>
-            <p class="hero-bio">热爱技术，喜欢构建优雅的解决方案</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">查看项目</a>
-                <a href="#contact" class="btn btn-outline">联系我</a>
+
+            <!-- 右边：时间 + 碎碎念 -->
+            <div class="hero-right">
+                <!-- 实时时钟 -->
+                <div class="clock-card card">
+                    <div class="clock-time" id="clockTime">00:00:00</div>
+                    <div class="clock-date" id="clockDate">2026年6月6日</div>
+                </div>
+
+                <!-- 碎碎念 -->
+                <a  class="murmur-card card" id="murmurCard">
+                    <div class="murmur-label">☕ 碎碎念</div>
+                    <div class="murmur-quote" id="murmurQuote">加载中...</div>
+                    <div class="murmur-source" id="murmurSource"></div>
+                </a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -52,7 +69,7 @@
             <h2 class="section-title">关于我</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>我是一名充满热情的开发者，专注于创造出有意义的产品和体验。</p>
+                    <p>卑以自牧，含章可贞</p>
                     <p>我享受将复杂问题转化为简洁解决方案的过程，持续学习新知识并应用于实践中。</p>
                     <p>工作之余，我喜欢阅读、写作，偶尔记录一些技术随笔和生活感悟。</p>
                 </div>
@@ -60,13 +77,10 @@
                     <h3>技能标签</h3>
                     <div class="skill-tags">
                         <span class="tag">JavaScript</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">React</span>
+                        <span class="tag">Vue.js</span>
                         <span class="tag">Node.js</span>
                         <span class="tag">HTML/CSS</span>
                         <span class="tag">Git</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Linux</span>
                     </div>
                 </div>
             </div>
@@ -78,63 +92,33 @@
         <div class="container">
             <h2 class="section-title">项目</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card card" id="project1">
                     <div class="project-icon">📁</div>
-                    <h3>项目名称一</h3>
-                    <p>这是一个简短的项目描述，介绍项目的功能、使用的技术栈以及解决的问题。</p>
+                    <h3>微信小程序</h3>
+                    <p>召唤师攻略助手</p>
                     <div class="project-tags">
-                        <span>React</span><span>Node.js</span>
+                        <span>微信小程序</span><span>云开发</span>
                     </div>
-                    <a href="#" class="project-link">了解更多 →</a>
+                    <a href="javascript:void(0)" class="project-link" id="project1Link">了解更多 →</a>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon">🚀</div>
-                    <h3>项目名称二</h3>
-                    <p>这是另一个项目的简介，突出项目的亮点和创新之处。</p>
+                <div class="project-card card">
+                    <div class="project-icon">🛒</div>
+                    <h3>小米商城</h3>
+                    <p>仿小米官网商城首页，纯 HTML/CSS 还原，包含导航、商品展示、轮播图等模块。</p>
                     <div class="project-tags">
-                        <span>Python</span><span>Flask</span>
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
                     </div>
-                    <a href="#" class="project-link">了解更多 →</a>
+                    <a href="projects/xiaomi/index.html" class="project-link" target="_blank">查看项目 →</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card card">
                     <div class="project-icon">💡</div>
-                    <h3>项目名称三</h3>
-                    <p>描述这个项目解决了什么实际问题，带来了什么价值。</p>
+                    <h3>关于ai方面的</h3>
+                    <p>目前还么想好</p>
                     <div class="project-tags">
-                        <span>Vue</span><span>Express</span>
+                        <span></span><span></span>
                     </div>
                     <a href="#" class="project-link">了解更多 →</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 随笔 -->
-    <section id="essays" class="essays section">
-        <div class="container">
-            <h2 class="section-title">随笔</h2>
-            <div class="essay-list">
-                <article class="essay-item">
-                    <time datetime="2026-05-20">2026-05-20</time>
-                    <div class="essay-content">
-                        <h3>如何使用 Git 高效协作</h3>
-                        <p>团队协作中 Git 的最佳实践与工作流程总结...</p>
-                    </div>
-                </article>
-                <article class="essay-item">
-                    <time datetime="2026-04-15">2026-04-15</time>
-                    <div class="essay-content">
-                        <h3>初探 Rust：内存安全的新思路</h3>
-                        <p>从所有权机制看 Rust 如何在不使用 GC 的情况下保证内存安全...</p>
-                    </div>
-                </article>
-                <article class="essay-item">
-                    <time datetime="2026-03-08">2026-03-08</time>
-                    <div class="essay-content">
-                        <h3>远程工作的思考</h3>
-                        <p>一年多远程办公下来，关于效率与生活平衡的一些个人体会...</p>
-                    </div>
-                </article>
             </div>
         </div>
     </section>
@@ -145,33 +129,35 @@
             <h2 class="section-title">联系方式</h2>
             <p class="contact-subtitle">欢迎通过以下方式与我取得联系</p>
             <div class="contact-grid">
-                <div class="contact-card">
+                <div class="contact-card card">
                     <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 15.5v-5h-2v-2h2v-1.5c0-2 1.2-3.1 3-3.1.8 0 1.7.1 2.4.3l-.4 2c-.5-.1-1-.2-1.5-.2-.8 0-1.1.4-1.1 1.1v1.4h2.6l-.3 2h-2.3v5h-2.4z"/></svg>
+                        <!-- QQ 企鹅图标 -->
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12.003 2c-2.265 0-4.18 1.364-5.09 3.305-.4.85-.55 1.78-.45 2.695-.89-.34-1.56-.95-1.82-1.72-.15-.44-.1-.72.2-.8.46-.13.52-.55.07-.87-.5-.36-.96.02-1.21.2-.7.52-1.01 1.52-.9 2.68.1 1.1.7 2.07 1.59 2.76-.24.4-.41.84-.5 1.3-.13.72-.12 1.48.02 2.22.28 1.46 1.07 2.77 2.21 3.67.63.5 1.37.88 2.16 1.09 1.22.32 2.87.3 3.93.08 1.04-.2 1.98-.69 2.67-1.41.76-.78 1.16-1.78 1.23-2.86.05-.69-.06-1.38-.3-2.02-.25-.64-.65-1.21-1.14-1.7.53-.55.9-1.25 1.06-2.02.14-.72.14-1.47-.02-2.19-.13-.58-.39-1.13-.75-1.6.44-.29.83-.69 1.13-1.18.45-.75.66-1.62.6-2.53-.04-.68-.27-1.33-.68-1.85-.4-.51-.98-.88-1.63-1.01-.42-.08-.77.05-1.02.24-.29.22-.45.55-.6.9-.2.45-.35.94-.42 1.44-.05.35-.07.7-.06 1.06-.26-.09-.53-.15-.81-.19-.65-.1-1.32-.1-1.98 0-.42.06-.84.16-1.24.3-.02-.27 0-.53.05-.8.08-.5.24-.98.45-1.43.15-.33.32-.64.6-.85.22-.17.54-.27.93-.17.4.09.82-.1.85-.5.03-.42-.34-.79-.72-.93-.62-.22-1.28-.09-1.73.34-.47.45-.7 1.06-.81 1.67-.01.06-.02.13-.02.2-.96-.15-1.99-.04-2.88.38-.53.24-1 .58-1.38 1-.38-.48-.62-1.06-.63-1.69 0-.31.04-.62.14-.92.17-.55.52-1.03.99-1.37.3-.21.63-.37.98-.47v.02c.01 0 .02 0 .03.02h.01s0 .01.01.01l.01.01c.3.13.62.22.94.26.92.13 1.87.05 2.74-.24 1.14-.39 2.1-1.12 2.77-2.09.22-.32.39-.67.52-1.04.22-.62.3-1.28.27-1.95-.01-.43-.1-.86-.25-1.26-.15-.41-.22-.8-.13-1.16.05-.21.23-.38.52-.41.38-.04.7.16.86.51.33.74.44 1.56.31 2.36-.13.82-.49 1.57-1.03 2.18-.18.21-.39.4-.62.57.22.18.42.37.6.59.49.58.84 1.28.98 2.05.12.71.12 1.45-.01 2.17-.13.7-.42 1.37-.86 1.93.24.37.44.78.59 1.21.21.61.31 1.27.27 1.93-.04.63-.25 1.25-.61 1.77-.67.97-1.75 1.66-2.99 1.94-1.29.29-2.73.24-3.9-.06-.71-.18-1.37-.5-1.92-.94-.83-.65-1.44-1.56-1.74-2.6-.14-.48-.19-.99-.16-1.5.04-.49.16-.97.36-1.43.13-.3.29-.58.48-.85.31.18.63.35.97.49 1.18.5 2.48.7 3.78.59.62-.04 1.24-.16 1.82-.38.3-.11.56-.28.77-.49.13-.14.18-.28.14-.38-.05-.13-.25-.2-.52-.18-.41.03-.72.17-1.02.32-.46.22-.95.39-1.46.49-.96.18-1.96.17-2.92-.05-.97-.22-1.85-.7-2.54-1.38l-.01-.01z"/></svg>
                     </div>
                     <span class="contact-label">QQ</span>
-                    <span class="contact-value">1234567890</span>
+                    <span class="contact-value">2022498507</span>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card card">
                     <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8.69 3.46l-1.73.72c-.68.28-1.14.89-1.14 1.62v12.4c0 .73.46 1.34 1.14 1.62l1.73.72c.38.16.82.16 1.2 0l6.62-2.76c.68-.28 1.14-.89 1.14-1.62V3.78c0-.73-.46-1.34-1.14-1.62L9.89 3.46c-.38-.16-.82-.16-1.2 0zm1.31.95l5.5 2.29v10.6l-5.5 2.29V4.41zM8 7.62l-2 1V19.2l2-1V7.62zm8 0v10.58l2-1V8.62l-2-1z"/></svg>
+                        <!-- 微信聊天气泡图标 -->
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.34 5.2c-.454 0-.898.049-1.33.146-2.158.49-3.675 2.133-3.675 4.148 0 2.25 1.898 4.075 4.242 4.075.383 0 .75-.053 1.107-.146l1.384.81a.326.326 0 00.167.054c.162 0 .29-.132.29-.295 0-.072-.03-.143-.048-.213l-.328-1.248a.59.59 0 01.213-.666c1.33-.978 2.089-2.388 2.089-3.967 0-2.92-2.56-5.297-5.71-5.297h-.4zm-2.487 2.36c.52 0 .94.432.94.962 0 .53-.42.961-.94.961a.952.952 0 01-.941-.961c0-.53.421-.962.94-.962zm4.924 0c.52 0 .94.432.94.962 0 .53-.42.961-.94.961a.952.952 0 01-.941-.961c0-.53.421-.962.94-.962z"/></svg>
                     </div>
                     <span class="contact-label">微信</span>
-                    <span class="contact-value">wechat_id_here</span>
+                    <span class="contact-value">18734719124</span>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </div>
                     <span class="contact-label">电子邮箱</span>
-                    <a href="mailto:yourname@example.com" class="contact-value">yourname@example.com</a>
+                    <a href="mailto:2022498507@qq.com" class="contact-value">2022498507@qq.com</a>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg>
                     </div>
                     <span class="contact-label">GitHub</span>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="contact-value">github.com/yourusername</a>
+                    <a href="https://github.com/Beiystar" target="_blank" rel="noopener" class="contact-value">github.com/yourusername</a>
                 </div>
             </div>
         </div>
@@ -180,9 +166,33 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 MySpace. All rights reserved.</p>
+            <p>&copy; 2026 卫政辉. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- 项目一详情弹窗 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">关闭</button>
+            <div class="modal-icon">📁</div>
+            <h2 class="modal-title">微信小程序 · 召唤师攻略助手</h2>
+            <div class="modal-tags">
+                <span>微信小程序</span><span>云开发</span><span>JavaScript</span>
+            </div>
+            <div class="modal-body">
+                <p>一款面向 MOBA 游戏玩家的微信小程序，帮助召唤师快速查找英雄攻略、出装推荐和版本强势英雄。</p>
+                <p>效果展示:</p>
+                <div class="modal-images-row">
+                <img src="1.jpg" alt="项目截图" class="modal-image">
+                <img src="2.jpg" alt="项目截图" class="modal-image">
+                <img src="3.jpg" alt="项目截图" class="modal-image">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span>微信小程序搜索体验</span>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

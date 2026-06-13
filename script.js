@@ -1,10 +1,4 @@
-/**
- * 个人主页 - 交互脚本
- * 包含: 导航滚动效果、汉堡菜单、平滑滚动、活跃链接高亮
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 元素引用
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -40,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
-        // 处理遮罩层
         let overlay = document.querySelector('.nav-overlay');
         if (navMenu.classList.contains('active')) {
             if (!overlay) {
@@ -62,10 +55,70 @@ document.addEventListener('DOMContentLoaded', () => {
         if (overlay) overlay.remove();
     }
 
+    // ---------- 实时时钟 ----------
+    const clockTime = document.getElementById('clockTime');
+    const clockDate = document.getElementById('clockDate');
+
+    function updateClock() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        clockTime.textContent = `${h}:${m}:${s}`;
+
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        const weekDays = ['日', '一', '二', '三', '四', '五', '六'];
+        const weekDay = weekDays[now.getDay()];
+        clockDate.textContent = `${year}年${month}月${day}日 星期${weekDay}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // ---------- 碎碎念语录轮播 ----------
+    const quotes = [
+        { text: '卑以自牧，含章可贞。', source: '——《周易》' },
+        { text: '天行健，君子以自强不息。', source: '——《周易》' },
+        { text: '地势坤，君子以厚德载物。', source: '——《周易》' },
+        { text: '非淡泊无以明志，非宁静无以致远。', source: '——诸葛亮《诫子书》' },
+        { text: '路漫漫其修远兮，吾将上下而求索。', source: '——屈原《离骚》' },
+        { text: '长风破浪会有时，直挂云帆济沧海。', source: '——李白《行路难》' },
+        { text: '宝剑锋从磨砺出，梅花香自苦寒来。', source: '——《警世贤文》' },
+        { text: '博观而约取，厚积而薄发。', source: '——苏轼' },
+        { text: '纸上得来终觉浅，绝知此事要躬行。', source: '——陆游《冬夜读书示子聿》' },
+        { text: '不积跬步，无以至千里；不积小流，无以成江海。', source: '——荀子《劝学》' },
+    ];
+
+    const murmurQuote = document.getElementById('murmurQuote');
+    const murmurSource = document.getElementById('murmurSource');
+    let quoteIndex = 0;
+
+    function showQuote(index) {
+        const q = quotes[index];
+        murmurQuote.style.opacity = '0';
+        murmurSource.style.opacity = '0';
+        setTimeout(() => {
+            murmurQuote.textContent = q.text;
+            murmurSource.textContent = q.source;
+            murmurQuote.style.opacity = '1';
+            murmurSource.style.opacity = '1';
+        }, 400);
+    }
+
+    // 初始显示第一句
+    showQuote(0);
+
+    // 每 10 秒切换
+    setInterval(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        showQuote(quoteIndex);
+    }, 10000);
+
     // ---------- 事件绑定 ----------
     hamburger.addEventListener('click', toggleMenu);
 
-    // 点击导航链接后关闭移动端菜单
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -74,16 +127,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 滚动监听 (使用被动监听提升性能)
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // 窗口大小改变时关闭菜单
     window.addEventListener('resize', () => {
         if (window.innerWidth > 640 && navMenu.classList.contains('active')) {
             closeMenu();
         }
     });
 
+    // ---------- 项目详情弹窗 ----------
+    const modalOverlay = document.getElementById('modalOverlay');
+    const project1Link = document.getElementById('project1Link');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal() {
+        modalOverlay.classList.add('show');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeModal() {
+        modalOverlay.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    }
+
+    project1Link.addEventListener('click', openModal);
+
+    modalClose.addEventListener('click', closeModal);
+
+    // 点击关闭
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+
+
+    });
+
     // ---------- 初始化 ----------
     onScroll();
-});
+
