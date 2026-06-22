@@ -110,14 +110,14 @@
                     </div>
                     <a href="projects/xiaomi/index.html" class="project-link" target="_blank">查看项目 →</a>
                 </div>
-                <div class="project-card card">
-                    <div class="project-icon">💡</div>
-                    <h3>关于ai方面的</h3>
-                    <p>目前还么想好</p>
+                <div class="project-card card" id="project3">
+                    <div class="project-icon">🧠</div>
+                    <h3>心理健康平台</h3>
+                    <p>基于 Vue 3 + Element Plus 的内容管理后台，含侧边栏导航、文章管理、权限控制等模块。</p>
                     <div class="project-tags">
-                        <span></span><span></span>
+                        <span>Vue 3</span><span>Element Plus</span><span>Pinia</span>
                     </div>
-                    <a href="#" class="project-link">了解更多 →</a>
+                    <a href="javascript:void(0)" class="project-link" id="project3Link">了解更多 →</a>
                 </div>
             </div>
         </div>
@@ -190,6 +190,37 @@
             </div>
             <div class="modal-footer">
                 <span>微信小程序搜索体验</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目三详情弹窗 -->
+    <div class="modal-overlay" id="modalOverlay3">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose3">关闭</button>
+            <div class="modal-icon">🧠</div>
+            <h2 class="modal-title">心理健康平台 · Vue 3 管理后台</h2>
+            <div class="modal-tags">
+                <span>Vue 3</span><span>Element Plus</span><span>Pinia</span><span>Vue Router</span><span>Axios</span>
+            </div>
+            <div class="modal-body">
+                <p>基于 Vue 3 + Element Plus 构建的内容管理后台，实现文章管理、数据看板等模块。</p>
+                <p><strong>技术亮点：</strong></p>
+                <ul style="text-align:left; line-height:2;">
+                    <li>封装 TableSearch 通用搜索组件，通过配置数组动态渲染表单项</li>
+                    <li>Pinia 管理全局 UI 状态，侧边栏折叠响应式切换</li>
+                    <li>Vue Router 路由守卫控制权限，Axios 拦截器统一注入 Token</li>
+                    <li>SCSS 编写响应式布局，适配不同屏幕尺寸</li>
+                </ul>
+                <p>效果展示:</p>
+                <div class="modal-images-row">
+                    <img src="效果图1.png" alt="效果展示" class="modal-image">
+                    <img src="效果图2.png" alt="效果展示" class="modal-image">
+                    <img src="效果图3.png" alt="效果展示" class="modal-image">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span>源码暂未公开 · 本地项目</span>
             </div>
         </div>
     </div>

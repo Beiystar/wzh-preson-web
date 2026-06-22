@@ -159,6 +159,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modalOverlay) closeModal();
     });
 
+    // ---------- 项目三弹窗 ----------
+    const modalOverlay3 = document.getElementById('modalOverlay3');
+    const project3Link = document.getElementById('project3Link');
+    const modalClose3 = document.getElementById('modalClose3');
+
+    function openModal3() {
+        modalOverlay3.classList.add('show');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeModal3() {
+        modalOverlay3.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    }
+
+    project3Link.addEventListener('click', openModal3);
+
+    modalClose3.addEventListener('click', closeModal3);
+
+    modalOverlay3.addEventListener('click', (e) => {
+        if (e.target === modalOverlay3) closeModal3();
+    });
+
 
     });
 
